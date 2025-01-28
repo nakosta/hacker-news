@@ -1,0 +1,12 @@
+.container {
+  margin: 0 auto;
+}
+
+.listItem {
+  cursor: pointer;
+}
+
+.button {
+  margin-top: 20px;
+  text-align: center;
+}
