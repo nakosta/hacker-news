@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import apiClient from "../../api";
-import { createAppAsyncThunk } from "../../hooks";
+import { createAppAsyncThunk } from "../../hooks/hooks";
 import { errors } from "../../utils/utils";
 import { first100News } from "../../helpers/magicNums";
 

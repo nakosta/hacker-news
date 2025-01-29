@@ -5,7 +5,7 @@ import BackButton from "../../components/BackButton";
 import SpinLoader from "../../components/SpinLoader";
 import ErrorText from "../../components/ErrorText";
 import Comments from "../../components/Comments";
-import { useAppDispatch, useAppSelector } from "../../hooks";
+import { useAppDispatch, useAppSelector } from "../../hooks/hooks";
 import { getFormatDate } from "../../utils/utils";
 import { fetchStory } from "../../redux/slices/storySlice";
 import {

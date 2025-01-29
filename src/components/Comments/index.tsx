@@ -12,7 +12,7 @@ import {
   selectExpandedComments,
   selectCommentsStatus,
 } from "../../redux/selectors";
-import { useAppDispatch, useAppSelector } from "../../hooks";
+import { useAppDispatch, useAppSelector } from "../../hooks/hooks";
 import { getFormatDate, getCountReply, parseCommentText } from "../../utils/utils";
 import styles from "./index.module.css";
 

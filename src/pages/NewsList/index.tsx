@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { List, Typography, Button } from "antd";
 import SpinLoader from "../../components/SpinLoader";
-import { useAppDispatch, useAppSelector } from "../../hooks";
+import { useAppDispatch, useAppSelector } from "../../hooks/hooks";
 import { getFormatDate } from "../../utils/utils";
 import { fetchNews } from "../../redux/slices/newsSlice";
 import { selectNews, selectNewsStatus } from "../../redux/selectors";
