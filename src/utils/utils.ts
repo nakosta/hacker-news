@@ -2,9 +2,6 @@ export const errors = {
   getNews: "Ошибка при получении новостей",
   getStory: "Ошибка при получении новости",
   getComments: "Ошибка при получении комментариев",
-  selectedCoin: "Выбранная криптовалюта не найдена",
-  loadLocalStorage: "Не удалось загрузить portfolio из localStorage:",
-  saveLocalStorage: "Не удалось сохранить portfolio в localStorage:",
 };
 
 export const getFormatDate = (date: number): string =>

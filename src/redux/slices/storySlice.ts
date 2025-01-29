@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import apiClient from "../../api";
 import { createAppAsyncThunk } from "../../hooks";
-import { errors } from "../../utils";
+import { errors } from "../../utils/utils";
 
 type Story = {
   id: number;

@@ -13,7 +13,7 @@ import {
   selectCommentsStatus,
 } from "../../redux/selectors";
 import { useAppDispatch, useAppSelector } from "../../hooks";
-import { getFormatDate, getCountReply, parseCommentText } from "../../utils";
+import { getFormatDate, getCountReply, parseCommentText } from "../../utils/utils";
 import styles from "./index.module.css";
 
 const { Title, Text } = Typography;

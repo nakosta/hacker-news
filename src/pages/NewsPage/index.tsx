@@ -6,7 +6,7 @@ import SpinLoader from "../../components/SpinLoader";
 import ErrorText from "../../components/ErrorText";
 import Comments from "../../components/Comments";
 import { useAppDispatch, useAppSelector } from "../../hooks";
-import { getFormatDate } from "../../utils";
+import { getFormatDate } from "../../utils/utils";
 import { fetchStory } from "../../redux/slices/storySlice";
 import {
   selectStory,

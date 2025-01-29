@@ -1,8 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
 import apiClient from "../../api";
 import { createAppAsyncThunk } from "../../hooks";
-import { errors } from "../../utils";
-import { first100News } from "../../helpers";
+import { errors } from "../../utils/utils";
+import { first100News } from "../../helpers/magicNums";
 
 type NewsItem = {
   id: number;
