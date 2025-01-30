@@ -1,1 +1,1 @@
-export const first100News = 4;
+export const first100News = 100;
