@@ -32,7 +32,6 @@ export const fetchStory = createAppAsyncThunk<
 >("story/fetchStory", async (id, thunkAPI) => {
   try {
     const { data } = await apiClient.get<Story>(`item/${id}.json`);
-    console.log(data);
     return data;
   } catch (e) {
     const error = e as { message: string };

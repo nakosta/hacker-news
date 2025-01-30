@@ -2,7 +2,7 @@ import { JSX } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "antd";
 
-const BackButton = (): JSX.Element => {
+const ButtonBack = (): JSX.Element => {
   const navigate = useNavigate();
 
   return (
@@ -12,4 +12,4 @@ const BackButton = (): JSX.Element => {
   );
 };
 
-export default BackButton;
+export default ButtonBack;

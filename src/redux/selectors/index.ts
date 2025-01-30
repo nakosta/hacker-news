@@ -47,9 +47,14 @@ export const selectExpandedComments = createSelector(
   (commentsState) => commentsState.expandedComments
 );
 
-export const selectCommentsStatus = createSelector(
+export const selectCommentsLoading = createSelector(
   [commentsSelector],
-  (commentsState) => commentsState.status
+  (commentsState) => commentsState.loadingComments
+);
+
+export const selectCommentsInitialLoading = createSelector(
+  [commentsSelector],
+  (commentsState) => commentsState.initialLoading
 );
 
 export const selectCommentsError = createSelector(

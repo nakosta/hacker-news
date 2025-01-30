@@ -4,7 +4,7 @@ import { createAppAsyncThunk } from "../../hooks/hooks";
 import { errors } from "../../utils/utils";
 import { first100News } from "../../helpers/magicNums";
 
-type NewsItem = {
+export type NewsItem = {
   id: number;
   title: string;
   score: number;
@@ -35,13 +35,13 @@ export const fetchNews = createAppAsyncThunk<
 
     const topIds = ids.slice(0, first100News);
 
-    const newsPromises = topIds.map((id) =>
-      apiClient
-        .get<NewsItem>(`item/${id}.json`)
-        .then((response) => response.data)
+    const news = await Promise.all(
+      topIds.map((id) =>
+        apiClient
+          .get<NewsItem>(`item/${id}.json`)
+          .then((response) => response.data)
+      )
     );
-
-    const news = await Promise.all(newsPromises);
 
     return news.sort((a, b) => b.time - a.time);
   } catch (e) {

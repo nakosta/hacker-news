@@ -15,20 +15,23 @@ export const getFormatDate = (date: number): string =>
   });
 
 export const getCountReply = (count: number): string => {
-  function getWordForm(count: number, forms: [string, string, string]): string {
-    const mod10 = count % 10;
-    const mod100 = count % 100;
+  const getWordForm = (n: number, forms: [string, string, string]): string => {
+    const mod10 = n % 10;
+    const mod100 = n % 100;
+
     if (mod100 >= 11 && mod100 <= 14) {
-      return forms[2];
+      return forms[2]; // "ответов"
     }
     if (mod10 === 1) {
-      return forms[0];
+      return forms[0]; // "ответ"
     }
     if (mod10 >= 2 && mod10 <= 4) {
-      return forms[1];
+      return forms[1]; // "ответа"
     }
-    return forms[2];
-  }
+
+    return forms[2]; // "ответов" (все остальные случаи)
+  };
+
   const forms: [string, string, string] = ["ответ", "ответа", "ответов"];
   return `${count} ${getWordForm(count, forms)}`;
 };
