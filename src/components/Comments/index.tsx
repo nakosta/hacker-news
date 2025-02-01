@@ -4,7 +4,7 @@ import Comment from "../Comment";
 import SpinLoader from "../SpinLoader";
 import {
   fetchComments,
-  resetInitialLoading,
+  resetComments,
 } from "../../redux/slices/commentsSlice";
 import {
   selectCommentsInitialLoading,
@@ -26,7 +26,7 @@ const Comments = (): JSX.Element => {
       dispatch(fetchComments(story.kids));
     }
     return () => {
-      dispatch(resetInitialLoading());
+      dispatch(resetComments());
     };
   }, [story?.kids, dispatch]);
 
@@ -49,7 +49,7 @@ const Comments = (): JSX.Element => {
           type="primary"
           onClick={() => {
             if (story.kids) {
-              dispatch(resetInitialLoading());
+              dispatch(resetComments());
               dispatch(fetchComments(story.kids));
             }
           }}

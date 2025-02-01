@@ -36,9 +36,7 @@ const Comment = ({ ids }: CommentProps): JSX.Element => {
 
     if (!areChildrenLoaded) {
       dispatch(setLoading({ id: kids[0], isLoading: true }));
-      dispatch(fetchComments(kids)).finally(() => {
-        dispatch(setLoading({ id: kids[0], isLoading: false }));
-      });
+      dispatch(fetchComments(kids));
     }
 
     dispatch(toggleExpand(kids[0]));

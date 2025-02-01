@@ -31,7 +31,7 @@ export const fetchNews = createAppAsyncThunk<
   { rejectValue: string }
 >("news/fetchNews", async (_, thunkAPI) => {
   try {
-    const { data: ids } = await apiClient.get<number[]>("newstories.json");
+    const { data: ids } = await apiClient.get<number[]>("topstories.json");
 
     const topIds = ids.slice(0, first100News);
 

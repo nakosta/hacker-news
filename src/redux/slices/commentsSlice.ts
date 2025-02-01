@@ -63,21 +63,30 @@ const commentsSlice = createSlice({
       const { id, isLoading } = action.payload;
       state.loadingComments[id] = isLoading;
     },
-    resetInitialLoading(state) {
+    resetComments(state) {
+      state.comments = {};
+      state.expandedComments = {};
+      state.loadingComments = {};
       state.initialLoading = true;
+      state.error = null;
     },
   },
   extraReducers: (builder) => {
     builder
       .addCase(fetchComments.pending, (state) => {
-        state.initialLoading = true;
+        if (Object.keys(state.comments).length === 0) {
+          state.initialLoading = true;
+        }
       })
       .addCase(fetchComments.fulfilled, (state, action) => {
         action.payload.forEach((comment) => {
           state.comments[comment.id] = comment;
           state.loadingComments[comment.id] = false;
         });
-        state.initialLoading = false;
+
+        if (state.initialLoading) {
+          state.initialLoading = false;
+        }
       })
       .addCase(fetchComments.rejected, (state, action) => {
         state.error = action.payload || errors.getComments;
@@ -86,6 +95,6 @@ const commentsSlice = createSlice({
   },
 });
 
-export const { toggleExpand, setLoading, resetInitialLoading } =
+export const { toggleExpand, setLoading, resetComments } =
   commentsSlice.actions;
 export default commentsSlice.reducer;
